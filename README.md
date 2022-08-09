@@ -1,4 +1,4 @@
-# Getting started with Quarkus
+# Getting started with building Quarkus in Graalvm or Mandreal
 
 This is a minimal CRUD service exposing a couple of endpoints over REST.
 
@@ -61,7 +61,7 @@ Then run it:
 
 Have a look at how fast it boots, or measure the total native memory consumption.
 
-### Run Quarkus as a native executable
+### Run Quarkus as a native executable on Windows
 
 You can also create a native executable from this application without making any
 source code changes. A native executable removes the dependency on the JVM:
@@ -77,3 +77,7 @@ native executable:
 After getting a cup of coffee, you'll be able to run this executable directly:
 
 > ./target/getting-started-1.0.0-SNAPSHOT-runner
+
+To create native image on Windows, use the below command:
+
+> cmd /c 'call "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvars64.bat" && mvn package -Pnative -DskipTests'
