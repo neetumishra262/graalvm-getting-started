@@ -1,4 +1,4 @@
-# Getting started with Quarkus
+# Getting started with building Quarkus in Graalvm or Mandreal
 
 This is a minimal CRUD service exposing a couple of endpoints over REST.
 
@@ -35,12 +35,12 @@ live coding. To try this out:
 
 > ./mvnw quarkus:dev
 
-This command will leave Quarkus running in the foreground listening on port 8080.
+This command will leave Quarkus running in the foreground listening on port 9090.
 
-1. Visit the default endpoint: [http://127.0.0.1:8080](http://127.0.0.1:8080).
+1. Visit the default endpoint: [http://127.0.0.1:9090](http://127.0.0.1:9090).
     - Make a simple change to [src/main/resources/META-INF/resources/index.html](src/main/resources/META-INF/resources/index.html) file.
     - Refresh the browser to see the updated page.
-2. Visit the `/hello` endpoint: [http://127.0.0.1:8080/hello](http://127.0.0.1:8080/hello)
+2. Visit the `/hello` endpoint: [http://127.0.0.1:9090/hello](http://127.0.0.1:9090/hello)
     - Update the response in [src/main/java/org/acme/quickstart/GreetingResource.java](src/main/java/org/acme/quickstart/GreetingResource.java). Replace `hello` with `hello there` in the `hello()` method.
     - Refresh the browser. You should now see `hello there`.
     - Undo the change, so the method returns `hello` again.
@@ -61,7 +61,7 @@ Then run it:
 
 Have a look at how fast it boots, or measure the total native memory consumption.
 
-### Run Quarkus as a native executable
+### Run Quarkus as a native executable on Windows
 
 You can also create a native executable from this application without making any
 source code changes. A native executable removes the dependency on the JVM:
@@ -77,3 +77,7 @@ native executable:
 After getting a cup of coffee, you'll be able to run this executable directly:
 
 > ./target/getting-started-1.0.0-SNAPSHOT-runner
+
+To create native image on Windows, use the below command:
+
+> cmd /c 'call "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvars64.bat" && mvn package -Pnative -DskipTests'
